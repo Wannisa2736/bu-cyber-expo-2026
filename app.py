@@ -1,68 +1,44 @@
 import streamlit as st
 from PIL import Image
 
-st.set_page_config(page_title="BU Cyber Expo 2026", layout="centered")
+st.set_page_config(page_title="BU Cyber Expo 2026", layout="wide")
 
-# ตั้งค่า A4 Style
+# ----- Header -----
+st.markdown("<h1 style='text-align: center;'>BU Cyber Fortress Challenge & Career Expo 2026</h1>", unsafe_allow_html=True)
+
+st.markdown("### 🏢 Company: A06 – SecureLine Co., Ltd.")
+
+st.divider()
+
+# ----- Company Insights -----
+st.subheader("💡 Company Insights")
+
 st.markdown("""
-    <style>
-    .a4-container {
-        width: 794px;
-        height: 1123px;
-        padding: 40px;
-        margin: auto;
-        background-color: white;
-        box-shadow: 0 0 10px rgba(0,0,0,0.2);
-        font-family: Arial, sans-serif;
-    }
-    h1 {
-        text-align: center;
-        color: #0B3D91;
-    }
-    h2 {
-        color: #C00000;
-        margin-top: 20px;
-    }
-    p, li {
-        font-size: 14px;
-    }
-    </style>
-""", unsafe_allow_html=True)
-
-st.markdown('<div class="a4-container">', unsafe_allow_html=True)
-
-st.markdown("<h1>BU Cyber Fortress Challenge & Career Expo 2026</h1>", unsafe_allow_html=True)
-
-st.markdown("### 🏢 Company: A06 – SecureInfo Co., Ltd.")
-st.markdown("**ประเภทองค์กร:** Cybersecurity & IT Security Solutions")
-
-st.markdown("## 🛡 Company Insights")
-st.markdown("""
-- **ตำแหน่งงาน:** Cybersecurity Analyst, Security Engineer, SOC Analyst, Internship  
-- **Skills ที่ต้องมี:** Network, Cybersecurity, Log Analysis, Problem Solving  
-- **Tools:** Firewall, SIEM, IDS/IPS, Endpoint Security  
-- **Certificate แนะนำ:** Security+, CEH, Network+  
-- **คำแนะนำ:** ฝึก Lab จริง, ทำ Portfolio, พัฒนาทักษะวิเคราะห์
+- เป็นบริษัทด้าน Cybersecurity
+- ทำงานเกี่ยวกับ Network Security และ Cloud Security
+- มีการพัฒนาเครื่องมือด้านความปลอดภัยของข้อมูล
 """)
 
-st.markdown("## 📸 Evidence การเข้าร่วมงาน")
+st.divider()
 
-passport = Image.open("passport.jpg")
-booth = Image.open("booth.jpg")
+# ----- Evidence Section -----
+st.subheader("📸 Evidence การเข้าร่วมงาน")
 
-st.image(passport, caption="ภาพถ่ายคู่กับ Passport", use_container_width=True)
-st.image(booth, caption="ภาพระหว่างสนทนากับพี่ในบูธ SecureInfo", use_container_width=True)
+col1, col2 = st.columns(2)
 
-st.markdown("## 💡 Self-Reflection")
+with col1:
+    st.image("booth.jpg", use_container_width=True)
+
+with col2:
+    st.image("passport.jpg", use_container_width=True)
+
+st.divider()
+
+# ----- Reflection -----
+st.subheader("💭 Self-Reflection")
+
 st.markdown("""
-จากการเข้าร่วมงาน ทำให้เข้าใจว่า Cybersecurity ต้องมีพื้นฐาน Network ที่แข็งแรง  
-และต้องฝึกวิเคราะห์ Log และ Incident จริง  
-
-**สิ่งที่ต้องพัฒนาเพิ่มเติม**
-- ฝึกทำ Lab Cybersecurity
-- เรียนรู้ SIEM และ Log Analysis
-- เตรียมสอบ Certificate
-- พัฒนา Portfolio ด้าน Security
+งานนี้ทำให้ได้เรียนรู้เกี่ยวกับสายงาน Cybersecurity มากขึ้น  
+ได้เห็นบรรยากาศการทำงานจริง  
+และเข้าใจทักษะที่ควรพัฒนาเพิ่มเติม
 """)
-
-st.markdown("</div>", unsafe_allow_html=True)
